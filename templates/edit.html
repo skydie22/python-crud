@@ -1,0 +1,37 @@
+<!-- Code by Kelas Programmer
+Author: Setiawan Dimas Arimurti
+Author URL: https://kelasprogrammer.com
+License: Creative Commons Atribusi-NonKomersial 4.0 Internasional
+License URL: http://creativecommons.org/licenses/by-nc/4.0/
+-->
+<html>
+<head>
+   <title>Aplikasi CRUD python Menggunakan Flask | Kelasprogrammer.com </title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+   <div class="container">
+      <div class="col-sm-5">
+      <h2>Ubah Data mahasiswa</h2>
+         <form action="url_for('edit', id_mahasiswa={{data[0]}})" method="post">
+            <div class="form-group">
+               <input type="hidden" name="id_mahasiswa"  value="{{data[0]}}" class="form-control" />
+            </div>
+            <div class="form-group">
+               <label>Nama:</label>
+               <input type="text" name="nama"  value="{{data[1]}}" class="form-control" placeholder="Masukan nama barang" required />
+            </div>
+            <div class="form-group">
+               <label>npm:</label>
+               <input type="number" name="npm"  value="{{data[2]}}" class="form-control" placeholder="Masukan npm" required />
+            </div>
+            <div class="form-group">
+               <label>kelas:</label>
+               <input type="text" name="kelas"  value="{{data[3]}}" class="form-control" placeholder="Masukan kelas" required />
+            </div>
+            <button type="submit" id="Submit" name="submit" class="btn btn-primary">Edit</button>
+      </form>
+   </div>
+</div>
+</body>
+</html>

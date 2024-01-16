@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Aplikasi CRUD python Menggunakan Flask</h2>
+        <table class="table table-bordered table-hover">
+           <thead>
+           <tr>
+               <th>id</th>
+               <th>Nama Mahasiswa</th>
+               <th>Npm</th>
+               <th>Kelas</th>
+               <th width="10%" colspan="2">Aksi</th>
+           </tr>
+           </thead>
+        
+               <tbody>
+                 {% for row in container %}
+                 <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>
+                        <a href="http://127.0.0.1:5000/edit/{{ row[0] }}">edit data</a>
+                        <a href="http://127.0.0.1:5000/delete/{{ row[0] }}" class="btn btn-danger" role="button">delete Data</a>
+                    </td>
+                 </tr>
+              {% endfor %}
+               </tbody>
+        </table>
+        <a href="http://127.0.0.1:5000/add" class="btn btn-primary" role="button">Tambah Data</a>
+
+        </div>
+</body>
+</html>
