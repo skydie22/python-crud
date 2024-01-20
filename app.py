@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 
 #fungsi untuk membuka koneksi ke database
 def openDb():
@@ -30,8 +30,9 @@ def index():
    for data in result:
       container.append(data)
    closeDb()
-   return render_template('index.html', container=container)
-#fungsi untuk menambhkan data ke database
+   return render_template('index.html',container=container)
+#fungsi untuk 
+# data ke database
 @app.route('/add',  methods=['GET','POST'])
 def add():
    if request.method == 'POST':
